@@ -1,0 +1,17 @@
+<table>
+    <h1>Кредиты</h1>
+    <tr>
+        <th>Название кредита</th>
+        <th>Максимальная сумма кредита</th>
+        <th>Процентная ставка</th>
+        <th>Сумма комиссии</th>
+    </tr>
+    <tr> 
+    {%for credit in credits %}
+        <td>{{ credit.name}}</td>
+        <td>{{ credit.max_credit }}</td>
+        <td>{{ credit.interest_rate }}</td>
+        <td>{{ credit.commission_amount }}</td>
+    </tr>
+    {% endfor %}
+</table>

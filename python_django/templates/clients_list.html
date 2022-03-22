@@ -1,0 +1,4 @@
+<h1>Клиенты</h1>
+{%for client in clients %}
+<h2>{{ client.first_last_name}} - {{ client.INN }} - {{ client.address }} - {{ client.credit_program }}</h2>
+{% endfor %}
