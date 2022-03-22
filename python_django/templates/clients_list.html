@@ -1,4 +1,23 @@
-<h1>Клиенты</h1>
-{%for client in clients %}
-<h2>{{ client.first_last_name}} - {{ client.INN }} - {{ client.address }} - {{ client.credit_program }}</h2>
-{% endfor %}
+<table>
+    <h1>Клиенты</h1>
+    <tr>
+        <th>Имя клиента</th>
+        <th>ИНН</th>
+        <th>Номер телефона</th>
+        <th>Адрес</th>
+        <th>Дата подачи заявки</th>
+        <th>Кредитная программа</th>
+        <th>Статус заявки</th>
+    </tr>
+    <tr> 
+    {% for client in clients %}
+        <td>{{ client.first_last_name}}</td>
+        <td>{{ client.INN }}</td>
+        <td>{{ client.phone_number }}</td>
+        <td>{{ client.address }}</td>
+        <td>{{ client.application_date }}</td>
+        <td>{{ client.credit_program }}</td>
+        <td>{{ client.status }}</td>
+    </tr>
+    {% endfor %}
+</table>

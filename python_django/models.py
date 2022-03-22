@@ -13,10 +13,10 @@ class CreditProgram(models.Model):
 class Client(models.Model):
     first_last_name = models.CharField(max_length=200)
     INN = models.CharField(max_length=10)
-    Phone_number = models.CharField(max_length=15)
+    phone_number = models.CharField(max_length=15)
     address = models.CharField(max_length=20)
     application_date = models.DateField()
-    credit_program = models.ForeignKey(CreditProgram, on_delete=models.CASCADE)
+    credit_program = models.ForeignKey(CreditProgram, default="ипотечный", on_delete=models.CASCADE)
     STATUS_TYPE = (
         ('Pending', 'На рассмотрении'), ('Received','Получил'),
         ('Paid out','Выплатил'), ('Denied','Отказано')

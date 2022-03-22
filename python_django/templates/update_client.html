@@ -1,0 +1,18 @@
+<form method="POST" action=".">
+    {% csrf_token %}
+    <h2>Update a client</h2>
+    <p>Client name:</p>
+        <input value="{{ single_client.first_last_name}}" type="text" name="name">
+        <p>Client INN:</p>
+        <input value="{{ single_client.INN}}" type="number" name="INN">
+        <select name="credit_program">
+            {% for credit in credits %}
+            <option value="{{credit.id}}">{{credit.name}}</option>
+            {% endfor %}
+        </select>
+        <p>Client address :</p>
+        <input value="{{ single_client.address }}" type="text" name="address"></input>
+        <p>Application date:</p>
+        <input value="{{ single_client.application_date }}" type="date" name="application_date">
+    <button type="submit">Update</button>
+</form>
